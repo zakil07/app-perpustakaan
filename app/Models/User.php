@@ -12,6 +12,13 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role',
+    ];
+
     public function loans(): HasMany
     {
         return $this->hasMany(Loan::class);
